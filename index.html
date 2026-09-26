@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebrahem Ganym | Business & Data Analyst Portfolio</title>
+    
+    <style>
+        /* Base Reset & Variables */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: #0b0f19;
+            color: #f1f5f9;
+            line-height: 1.6;
+            padding: 50px 20px;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.12) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Glassmorphism Header Card */
+        header {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 40px;
+            border-radius: 24px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+
+        header .subtitle {
+            color: #94a3b8;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        /* Hero Badges / Quick Links */
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag-pill {
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        /* Sections General Styling */
+        section {
+            background: rgba(17, 24, 39, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 32px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: #f8fafc;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 22px;
+            background: linear-gradient(to bottom, #38bdf8, #818cf8);
+            border-radius: 4px;
+        }
+
+        p {
+            color: #94a3b8;
+            font-size: 1.02rem;
+            line-height: 1.7;
+        }
+
+        /* Modern Skill Badges */
+        .skills-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .skill-group h3 {
+            color: #e2e8f0;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .badge {
+            background: #1e293b;
+            color: #cbd5e1;
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .badge:hover {
+            border-color: #38bdf8;
+            color: #38bdf8;
+            transform: translateY(-2px);
+        }
+
+        /* Interactive Project Cards */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .project-card {
+            background: #111827;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 12px 30px rgba(56, 189, 248, 0.1);
+        }
+
+        .project-card h3 {
+            color: #f1f5f9;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 8px;
+            margin-top: 14px;
+            margin-bottom: 16px;
+        }
+
+        .project-tag {
+            font-size: 0.78rem;
+            color: #a7f3d0;
+            background: rgba(16, 185, 129, 0.1);
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        /* Contact Links & Buttons */
+        .contact-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .btn-contact {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #1e293b;
+            color: #f1f5f9;
+            padding: 12px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .btn-contact:hover {
+            background: #2563eb;
+            color: #ffffff;
+            border-color: #3b82f6;
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp:hover {
+            background: #10b981;
+            border-color: #10b981;
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-instagram:hover {
+            background: #e1306c;
+            border-color: #e1306c;
+            box-shadow: 0 6px 20px rgba(225, 48, 108, 0.3);
+        }
+
+        .btn-project {
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            border-color: rgba(56, 189, 248, 0.3);
+            font-size: 0.88rem;
+            padding: 8px 18px;
+        }
+
+        .btn-project:hover {
+            background: #38bdf8;
+            color: #0b0f19;
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Ebrahem Ganym</h1>
+            <div class="subtitle">Business Administration & Data Analyst | Web Developer</div>
+            <div class="hero-tags">
+                <span class="tag-pill">📊 Data Analysis</span>
+                <span class="tag-pill">💻 Web Development</span>
+                <span class="tag-pill">⚡ Python Automation</span>
+            </div>
+        </header>
+
+        <!-- About Me Section -->
+        <section>
+            <h2>About Me</h2>
+            <p>Business Administration student passionate about combining business strategy with data analytics and web technology. Skilled at turning complex business metrics into interactive dashboards, automating workflows with Python, and building modern web interfaces.</p>
+        </section>
+
+        <!-- Technical & Business Skills -->
+        <section>
+            <h2>Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h3>Data & Analytics</h3>
+                    <div class="badge-list">
+                        <span class="badge">SQL</span>
+                        <span class="badge">Microsoft Excel</span>
+                        <span class="badge">Power BI</span>
+                        <span class="badge">Tableau</span>
+                        <span class="badge">Power Query</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Business & Management</h3>
+                    <div class="badge-list">
+                        <span class="badge">Business Administration</span>
+                        <span class="badge">Business Analysis</span>
+                        <span class="badge">Resource Allocation</span>
+                        <span class="badge">Process Optimization</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Web & Automation</h3>
+                    <div class="badge-list">
+                        <span class="badge">HTML5</span>
+                        <span class="badge">CSS3</span>
+                        <span class="badge">JavaScript</span>
+                        <span class="badge">Python Automation</span>
+                        <span class="badge">Selenium</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects -->
+        <section>
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <!-- Project 1 with Updated Live Link -->
+                <div class="project-card">
+                    <h3>1. Employee Performance Data Analysis</h3>
+                    <p>Processed and analyzed structured employee performance metrics and business dataset, utilizing Excel/Google Sheets to generate visual data insights and structured data models.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Excel</span>
+                        <span class="project-tag">Google Sheets</span>
+                        <span class="project-tag">HR & Data Analytics</span>
+                    </div>
+                    <a href="https://docs.google.com/spreadsheets/d/18lIqUZsdvPqb3VTwHF0VyrfhikE3ZpSj/edit?usp=drivesdk" target="_blank" class="btn-contact btn-project">
+                        📊 Open Spreadsheet Project ↗
+                    </a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <h3>2. Interactive Sales & HR Dashboard</h3>
+                    <p>Designed and published interactive business dashboards analyzing sales performance and HR KPIs with dynamic filtering and visual analytics.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Tableau</span>
+                        <span class="project-tag">Excel</span>
+                        <span class="project-tag">Data Visualization</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <h3>3. Python Web Automation & Scripting</h3>
+                    <p>Developed Python scripts to automate web browser interactions, process web requests, and scrape key data efficiently.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Selenium</span>
+                        <span class="project-tag">HTTP Requests</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section>
+            <h2>Let's Connect</h2>
+            <p>Feel free to reach out for data projects, web development, or collaboration opportunities.</p>
+            
+            <div class="contact-links">
+                <a href="https://wa.me/201092257107" target="_blank" class="btn-contact btn-whatsapp">
+                    💬 WhatsApp
+                </a>
+                <a href="mailto:ebrahemgany@gmail.com" class="btn-contact">
+                    📧 Email Me
+                </a>
+                <a href="https://www.instagram.com/ibrahem_ganym" target="_blank" class="btn-contact btn-instagram">
+                    📸 Instagram
+                </a>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
