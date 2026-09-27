@@ -42,8 +42,32 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
+        /* Seamless Integrated Profile Picture */
+        .profile-wrapper {
+            display: inline-block;
+            margin-bottom: 18px;
+            position: relative;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid transparent;
+            background: linear-gradient(#0b0f19, #0b0f19) padding-box,
+                        linear-gradient(135deg, #38bdf8, #818cf8) border-box;
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.25);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(56, 189, 248, 0.45);
+        }
+
         header h1 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             font-weight: 800;
             background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
             -webkit-background-clip: text;
@@ -254,12 +278,15 @@
 <body>
 
     <div class="container">
-        <!-- Header -->
+        <!-- Header Section with Profile Avatar -->
         <header>
+            <div class="profile-wrapper">
+                <img src="profile.jpg" alt="Ebrahem Ganym" class="profile-img">
+            </div>
             <h1>Ebrahem Ganym</h1>
             <div class="subtitle">Business Administration & Data Analyst</div>
             <div class="hero-tags">
-                <span class="tag-pill">📊 Data Analysis</span>
+                <span class="tag-pill">📊 Data Analytics</span>
                 <span class="tag-pill">📈 Business Intelligence</span>
                 <span class="tag-pill">🐍 Python for Data</span>
             </div>
